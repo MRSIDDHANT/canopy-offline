@@ -4,6 +4,10 @@ An early standalone phylogenetic tree viewer for local Newick files. Open `index
 
 ## Try it
 
+**[Open Canopy online](https://mrsiddhant.github.io/canopy-offline/)**
+
+For offline use, download `Canopy_Offline.html` from the [Releases page](https://github.com/MRSIDDHANT/canopy-offline/releases) and open it in your browser.
+
 Download this repository as a ZIP, extract it, and open `index.html` in Firefox, Chrome, or Edge. Choose **Open tree** and select a `.treefile`, `.nwk`, or other plain-text Newick tree. The initial tree is synthetic demonstration data.
 
 On Linux, from the project folder:
@@ -90,7 +94,7 @@ Optional columns: `group`, `color` (#RRGGBB), `value` (nonnegative), and `heat:N
 
 This is version **0.4.0-alpha**, intended for evaluation and feedback. It is not a validated replacement for established scientific visualization software.
 
-Core tests cover Newick parsing/round trips, malformed inputs, branch-distance preservation after rerooting, known RF distances, session serialization, layouts, a synthetic 9,223-tip tree, and a deep 10,000-tip tree. Separate development-time integration checks exercised UI handlers and Canvas 2D exports with a minimal simulated DOM. **Real-browser visual QA and physical GPU acceleration have not been verified.** Performance on actual user trees remains unmeasured.
+Core tests cover Newick parsing/round trips, malformed inputs, branch-distance preservation after rerooting, known RF distances, session serialization, layouts, a synthetic 9,223-tip tree, and a deep 10,000-tip tree. Separate development-time integration checks exercised UI handlers and Canvas 2D exports with a minimal simulated DOM. A Chrome smoke test of the hosted app covered startup, switching layouts, textbox typography, optional support circles, and a PNG download reported at 600 DPI (4,800 × 4,336 pixels). This browser used the Canvas 2D fallback. Native-Canvas integration tests independently checked PNG/JPEG resolution metadata. **Physical GPU acceleration and broad cross-browser compatibility remain unverified.** Performance on actual user trees remains unmeasured.
 
 Parsing accepts one Newick tree, finite nonnegative lengths, quoted labels, raw comments, and multifurcations. Missing lengths are drawn as 1 in branch-length mode. Numeric internal labels (including `95/100`) are treated as edge support when rerooting; raw comments remain node metadata. Unary input roots cannot be rerooted. RF comparison ignores lengths, supports, and rooting, and requires identical unique tip IDs.
 
