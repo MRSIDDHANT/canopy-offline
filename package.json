@@ -1,0 +1,16 @@
+{
+  "name": "canopy-offline",
+  "version": "0.4.0-alpha",
+  "private": true,
+  "description": "Offline phylogenetic tree viewer",
+  "scripts": {
+    "test": "node tests/core.test.cjs && node tests/clades.test.cjs && node tests/presentation.test.cjs",
+    "test:canvas": "node tests/canvas.test.cjs"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
